@@ -15,7 +15,7 @@ module top
    wire good_1 = {x[38:32], 1'b0  ^ x[31] ^ 1'b0 } != x[38:31];
    wire good_2 = {x[38:32], 1'b1  ^ x[31] ^ 1'b1 } != x[38:31];
    wire good_3 = {x[38:32], x[31] ^ x[38] ^ x[38]} != x[38:31];
-   wire good_4 = {x[38:33], x[32] ^ x[38] ^ x[38]} != x[38:32];
+   wire good_4 = {x[39:33], x[39] ^ x[32] ^ x[39]} != x[39:32];
    assign goodness = good_1 | good_2 | good_3 | good_4;
 
    wire xor3_ok  = x[38] ^ x[32] ^ x[38];
